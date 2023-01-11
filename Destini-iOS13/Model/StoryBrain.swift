@@ -9,3 +9,12 @@
 import Foundation
 
 
+struct StoryBrain {
+    let story: Array<StoryThread>
+    var currentID: Int
+ 
+    init(_ loadStory : Array<StoryThread>) {
+        self.story = loadStory.sorted(by: {$0.indexID < $1.indexID})
+        self.currentID = 0
+    }
+}
